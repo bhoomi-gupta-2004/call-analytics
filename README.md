@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# VOX Gauge - Call Center Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+VOX Gauge is a simplified Call Center Analytics Dashboard built using **React + Vite + TypeScript + Material UI**. It focuses on displaying a **conversation list view** with search, filtering, and expandable row functionalities.
 
-Currently, two official plugins are available:
+## Features
+✅ **Search Conversations** by owner
+✅ **Filter by Type** (Sales/Marketing)
+✅ **Filter by Talk Ratio**
+✅ **Expandable Rows** to show summary
+✅ **Circular Progress Indicator** for Talk Ratio
+✅ **Responsive UI** using Material UI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend:** React, TypeScript, Vite
+- **UI Library:** Material UI
+- **State Management:** React useState
+- **Build Tool:** Vite
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Project Structure
+```
+vox-gauge/
+│── src/
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── SearchBar.tsx
+│   │   ├── Filters.tsx
+│   │   ├── ConversationList.tsx
+│   ├── context/
+│   │   ├── ConversationContext.tsx
+│   ├── data/
+│   │   ├── mockData.ts
+│   ├── types/
+│   │   ├── conversation.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│── package.json
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/vox-gauge.git
+   cd vox-gauge
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
+4. Open the browser and visit:
+   ```
+   http://localhost:5173/
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Build & Deployment
+To build the project for production:
+```sh
+npm run build
 ```
+This will create a `dist/` folder with the production-ready files.
+
+## Issues & Debugging
+- If the build fails, try:
+  ```sh
+  npm run build --force
+  ```
+- Check TypeScript errors by running:
+  ```sh
+  npm run lint
+  ```
+
+## Author
+Developed by **[Your Name]**
+
+## License
+This project is licensed under the **MIT License**.
+
