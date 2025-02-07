@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -21,15 +21,16 @@ import {
   DialogContent,
   DialogActions,
 } from "@mui/material";
-import { mockConversations } from "./data/mockData";
+import { mockConversations } from "./data/mockData"; // Fix 2: Import Conversation type
+import { Conversation } from "./types/conversations";
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState("");
-  const [selectedConversation, setSelectedConversation] = useState(null);
+  const [selectedConversation, setSelectedConversation] = useState<Conversation | null>(null); // Fix 3: Explicit type
   const [open, setOpen] = useState(false);
 
-  const handleViewClick = (conversation) => {
+  const handleViewClick = (conversation: Conversation) => { // Fix 2: Type the function parameter
     setSelectedConversation(conversation);
     setOpen(true);
   };
